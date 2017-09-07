@@ -11,9 +11,16 @@ namespace MvcMusicStore.Controllers
     {
         //
         // GET: /Store/
-        public string Index()
+        public ActionResult Index()
         {
-            return "Hello from Store.Index()";
+            var genres = new List<Genre>
+            {
+                new Genre {Name = "DarkWave"},
+                new Genre {Name = "Jazzhands"},
+                new Genre {Name = "Metal"}
+            };
+
+            return View(genres);
         }
         //
         // GET: /Store/Browse
