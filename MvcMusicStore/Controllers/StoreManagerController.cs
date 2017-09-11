@@ -10,12 +10,12 @@ using MvcMusicStore.Models;
 
 namespace MvcMusicStore.Controllers
 {
-    public class StoreManagerContoller : Controller
+    public class StoreManagerController : Controller
     {
         private MusicStoreEntities db = new MusicStoreEntities();
 
         // GET: StoreManagerContoller
-        public ActionResult Index()
+        public ViewResult Index()
         {
             var albums = db.Albums.Include(a => a.Artist).Include(a => a.Genre);
             return View(albums.ToList());

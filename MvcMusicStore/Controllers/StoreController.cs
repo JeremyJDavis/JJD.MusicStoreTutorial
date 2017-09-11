@@ -27,6 +27,7 @@ namespace MvcMusicStore.Controllers
                 .Single(g => g.Name == genre);
 
             return View(genreModel);
+
         }
         //
         // GET: /Store/Details
