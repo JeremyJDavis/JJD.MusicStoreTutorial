@@ -14,9 +14,9 @@ namespace MvcMusicStore.Migrations
                         AlbumId = c.Int(nullable: false, identity: true),
                         GenreId = c.Int(nullable: false),
                         ArtistId = c.Int(nullable: false),
-                        Title = c.String(),
+                        Title = c.String(nullable: false, maxLength: 160),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        AlbumArtUrl = c.String(),
+                        AlbumArtUrl = c.String(maxLength: 1024),
                     })
                 .PrimaryKey(t => t.AlbumId)
                 .ForeignKey("dbo.Artists", t => t.ArtistId, cascadeDelete: true)
