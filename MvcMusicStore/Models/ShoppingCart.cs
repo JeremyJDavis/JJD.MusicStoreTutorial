@@ -24,7 +24,7 @@ namespace MvcMusicStore.Models
         }
         public void AddToCart(Album album)
         {
-            // Get the matching cart and album instances
+             //Get the matching cart and album instances
             var cartItem = storeDB.Carts.SingleOrDefault(
                 c => c.CartId == ShoppingCartId
                      && c.AlbumId == album.AlbumId);
@@ -47,7 +47,7 @@ namespace MvcMusicStore.Models
                 // then add one to the quantity
                 cartItem.Count++;
             }
-            // Save changes
+             //Save changes
             storeDB.SaveChanges();
         }
         public int RemoveFromCart(int id)
@@ -89,8 +89,8 @@ namespace MvcMusicStore.Models
         }
         public List<Cart> GetCartItems()
         {
-            return storeDB.Carts.Where(
-                cart => cart.CartId == ShoppingCartId).ToList();
+            return storeDB.Carts.Where( cart => cart.CartId == ShoppingCartId).ToList();
+            //return storeDB.Carts.Include("Product").Where(c => c.CartId == ShoppingCartId).ToList();
         }
         public int GetCount()
         {

@@ -13,7 +13,7 @@ namespace MvcMusicStore.Models
         public string CartId { get; set; }
         public int AlbumId { get; set; }
         public int Count { get; set; }
-        public System.DateTime DateCreated { get; set; }
+        public DateTime DateCreated { get; set; }
         public virtual Album Album { get; set; }
     }
 }

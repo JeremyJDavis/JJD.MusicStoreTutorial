@@ -27,6 +27,6 @@ namespace MvcMusicStore.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-        }
+         }
     }
 }
