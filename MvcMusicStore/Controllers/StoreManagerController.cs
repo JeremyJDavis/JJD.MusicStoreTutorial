@@ -20,7 +20,7 @@ namespace MvcMusicStore.Controllers
             var albums = db.Albums.Include(a => a.Artist).Include(a => a.Genre);
             return View(albums.ToList());
         }
-
+        
         // GET: StoreManager/Details/5
         public ActionResult Details(int? id)
         {
