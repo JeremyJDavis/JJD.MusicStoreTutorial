@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -10,6 +11,7 @@ using MvcMusicStore.Models;
 
 namespace MvcMusicStore.Controllers
 {
+    //[Authorize(Roles = "Administrator")]
     public class StoreManagerController : Controller
     {
         private MusicStoreEntities db = new MusicStoreEntities();
@@ -90,6 +92,7 @@ namespace MvcMusicStore.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(album).State = EntityState.Modified;
+                //db.Albums.AddOrUpdate(album);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
